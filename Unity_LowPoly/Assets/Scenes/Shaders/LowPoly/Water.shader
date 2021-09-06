@@ -38,25 +38,31 @@ Shader "LowPoly/Water"
                 float2 uv : TEXCOORD0;
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
-                float3 worldNormal : TEXCOORD1;
                 float3 worldPos : TEXCOORD2;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            
             float4 _SpecularColor;
             float _Gloss;
+
+            float _WaveHight;
 
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+
+                float4 pos = v.vertex;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
-                o.worldNormal = normalize(mul((float3x3)unity_ObjectToWorld,v.normal));
-                o.worldPos = mul(unity_ObjectToWorld,v.vertex);
+                pos.y += _WaveHight * sin(_Time.y * o.uv.x);
 
-                UNITY_TRANSFER_FOG(o,o.vertex);
+                o.vertex = UnityObjectToClipPos(pos);
+
+                o.worldPos = mul(unity_ObjectToWorld,pos);
+
+                UNITY_TRANSFER_FOG(o,pos);
                 return o;
             }
 
@@ -64,7 +70,7 @@ Shader "LowPoly/Water"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
 
-                fixed3 worldNormal = normalize(i.worldNormal);
+                fixed3 worldNormal = normalize(cross(ddy(i.worldPos),ddx(i.worldPos)));
                 fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
                 fixed3 diffuse = _LightColor0.rbg * col.rbg * saturate(dot(worldNormal,worldLightDir)) * 0.5 + 0.5;
 
