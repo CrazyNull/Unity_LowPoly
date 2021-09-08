@@ -6,15 +6,20 @@ Shader "LowPoly/Water"
         _SpecularColor ("Specular Color", Color) = (0,0,0,1)
         _Gloss ("Gloss",Range(0.5,20.0)) = 1.0
 
-        _WaveHight ("Wave Hight",Float) = 1.0
-        _WaveScale ("Wave Scale",Float) = 1.0
-        _WaveSpeed ("Wave Speed",Float) = 1.0
-
+        _WaveHight1 ("Wave Hight 1",Float) = 1.0
+        _WaveScale1 ("Wave Scale 1",Float) = 1.0
+        _WaveSpeed1 ("Wave Speed 1",Float) = 1.0
         _WaveDir1("Wave Direction 1",Float) = 0
+
+        _WaveHight2 ("Wave Hight 2",Float) = 1.0
+        _WaveScale2 ("Wave Scale 2",Float) = 1.0
+        _WaveSpeed2 ("Wave Speed 2",Float) = 1.0
         _WaveDir2("Wave Direction 2",Float) = 0
+
+        _WaveHight3 ("Wave Hight 3",Float) = 1.0
+        _WaveScale3 ("Wave Scale 3",Float) = 1.0
+        _WaveSpeed3 ("Wave Speed 3",Float) = 1.0
         _WaveDir3("Wave Direction 3",Float) = 0
-
-
     }
     SubShader
     {
@@ -53,26 +58,35 @@ Shader "LowPoly/Water"
             float4 _SpecularColor;
             float _Gloss;
 
-            float _WaveHight;
-            float _WaveScale;
-            float _WaveSpeed;
+            float _WaveHight1;
+            float _WaveScale1;
+            float _WaveSpeed1;
             float _WaveDir1;
-            float _WaveDir2;
-            float _WaveDir3;
 
+            float _WaveHight2;
+            float _WaveScale2;
+            float _WaveSpeed2;
+            float _WaveDir2;
+
+            float _WaveHight3;
+            float _WaveScale3;
+            float _WaveSpeed3;
+            float _WaveDir3;
 
             v2f vert (appdata v)
             {
                 v2f o;
 
                 float4 pos = v.vertex;
-                float2 uv1 = float2(v.uv.x *cos(_WaveDir1) - v.uv.y * sin(_WaveDir1),v.uv.x *sin(_WaveDir1) + v.uv.y*cos(_WaveDir1));
-                float2 uv2 = float2(v.uv.x *cos(_WaveDir2) - v.uv.y * sin(_WaveDir2),v.uv.x *sin(_WaveDir2) + v.uv.y*cos(_WaveDir2));
-                float2 uv3 = float2(v.uv.x *cos(_WaveDir3) - v.uv.y * sin(_WaveDir3),v.uv.x *sin(_WaveDir3) + v.uv.y*cos(_WaveDir3));
 
-                pos.y += _WaveHight * 0.3333 *  sin(_WaveScale * uv1.x + _Time.x * _WaveSpeed);
-                pos.y += _WaveHight * 0.3333 *  sin(_WaveScale * uv2.x + _Time.x * _WaveSpeed);
-                pos.y += _WaveHight * 0.3333 *  sin(_WaveScale * uv3.x + _Time.x * _WaveSpeed);
+                float2 uv = v.uv.xy - float2(0.5, 0.5);
+                float2 uv1 = float2(uv.x *cos(_WaveDir1) - uv.y * sin(_WaveDir1),uv.x *sin(_WaveDir1) + uv.y*cos(_WaveDir1));
+                float2 uv2 = float2(uv.x *cos(_WaveDir2) - uv.y * sin(_WaveDir2),uv.x *sin(_WaveDir2) + uv.y*cos(_WaveDir2));
+                float2 uv3 = float2(uv.x *cos(_WaveDir3) - uv.y * sin(_WaveDir3),uv.x *sin(_WaveDir3) + uv.y*cos(_WaveDir3));
+
+                pos.y += _WaveHight1 * 0.3333 *  sin(_WaveScale1 * uv1.x + _Time.x * _WaveSpeed1);
+                pos.y += _WaveHight2 * 0.3333 *  sin(_WaveScale2 * uv2.x + _Time.x * _WaveSpeed2);
+                pos.y += _WaveHight3 * 0.3333 *  sin(_WaveScale3 * uv3.x + _Time.x * _WaveSpeed3);
 
 
                 o.vertex = UnityObjectToClipPos(pos);

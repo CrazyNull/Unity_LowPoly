@@ -60,7 +60,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Gloss: 9
+    - _Gloss: 8
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -73,16 +73,25 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _WaveDir: 45
-    - _WaveDir1: 10
-    - _WaveDir2: 15
-    - _WaveDir3: 20
-    - _WaveHight: 0.02
+    - _WaveDir1: 60
+    - _WaveDir2: 150
+    - _WaveDir3: 230
+    - _WaveHight: 0.025
+    - _WaveHight1: 0.015
+    - _WaveHight2: 0.015
+    - _WaveHight3: 0.015
     - _WaveScale: 100
+    - _WaveScale1: 100
+    - _WaveScale2: 100
+    - _WaveScale3: 100
     - _WaveSpeed: 20
+    - _WaveSpeed1: 10
+    - _WaveSpeed2: 20
+    - _WaveSpeed3: 30
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.60258484, b: 1, a: 0.8156863}
+    - _Color: {r: 0, g: 0.91119623, b: 0.8352941, a: 0.8156863}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecularColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    - _SpecularColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
     - _WaveDir: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
