@@ -63,4 +63,6 @@ Shader "LowPoly/Diffuse"
             ENDCG
         }
     }
+
+    Fallback "Mobile/Diffuse"
 }
