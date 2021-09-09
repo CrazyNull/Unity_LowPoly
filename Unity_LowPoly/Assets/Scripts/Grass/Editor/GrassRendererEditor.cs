@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(GrassTest))]
+[CustomEditor(typeof(GrassRenderer))]
 public class GrassTestEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        if (GUILayout.Button("¥¥Ω®"))
+        if (Application.isPlaying && GUILayout.Button("ªÊ÷∆"))
         {
-            (this.target as GrassTest).CreateGrassland();
+            (this.target as GrassRenderer).CreateGrassland();
         }
     }
 }
