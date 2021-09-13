@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_grass
-  m_Shader: {fileID: 4800000, guid: f7abd84f284b76240998f7db95839e43, type: 3}
+  m_Name: mat_fong
+  m_Shader: {fileID: 4800000, guid: 03a6ab36902e2cd47873a1b9b06b06e1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3811f3fef0fe7be418d42a95c7f585fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,11 +60,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Gloss: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxOffset: 0.2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -72,26 +70,9 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SwingOffset: 0.25
     - _UVSec: 0
-    - _WaveDir1: 0
-    - _WaveDir2: 0
-    - _WaveDir3: 0
-    - _WaveHight1: 1
-    - _WaveHight2: 1
-    - _WaveHight3: 1
-    - _WaveScale1: 1
-    - _WaveScale2: 1
-    - _WaveScale3: 1
-    - _WaveSpeed1: 1
-    - _WaveSpeed2: 1
-    - _WaveSpeed3: 1
-    - _WindAngle: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.79755694, b: 0.8679245, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OffsetCenter: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecularColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WindDir: {r: 1, g: 0, b: 1, a: 0}
   m_BuildTextureStacks: []

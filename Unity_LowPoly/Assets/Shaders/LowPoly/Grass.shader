@@ -3,7 +3,8 @@ Shader "LowPoly/Grass"
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
-        _MaxOffset ("Max Offset",Float) = 0.1
+        _SwingOffset ("Swing Offset",Float) = 0.1
+        _WindDir ("Wind Direction",Vector) = (0,0,0,0)
     }
     SubShader
     {
@@ -43,10 +44,9 @@ Shader "LowPoly/Grass"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _Color;
-            float _MaxOffset;
 
-            float3 _GrassOffsetCenter;
-            float _GrassOffsetRadius;
+            float _SwingOffset;
+            float3 _WindDir;
 
             v2f vert (appdata v)
             {
@@ -54,17 +54,10 @@ Shader "LowPoly/Grass"
                 v2f o;
                 float4 pos = v.vertex;
                 float4 worldPos = mul(unity_ObjectToWorld,pos);
-
-                // float4 modelWorldPos = mul(unity_ObjectToWorld,float4(0,0,0,1));
-                // float dis = distance(_GrassOffsetCenter,modelWorldPos);
-                // if(dis < _GrassOffsetRadius)
-                // {
-                //     float3 dir = _GrassOffsetCenter - modelWorldPos;
-                //     dir = normalize(dir) * min(_MaxOffset,_GrassOffsetRadius - dis);
-                //     worldPos.xyz = worldPos.xyz - dir * smoothstep(0,1,v.uv.y);
-                //     pos = mul(unity_WorldToObject,worldPos);
-                // }
-
+                
+                float3 moveDir = _SwingOffset * normalize(_WindDir) * _SinTime.w;
+                worldPos.xyz = worldPos.xyz + moveDir * smoothstep(0,1,v.vertex.y / 1.0);
+                pos = mul(unity_WorldToObject,worldPos);
                 o.vertex = UnityObjectToClipPos(pos);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.worldPos = worldPos;

@@ -12,15 +12,12 @@ public class GrassRenderer : MonoBehaviour
     [Range(1,500)]
     public int GrassNum = 50;
 
-
     protected List<Matrix4x4[]> Matrix4x4s = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Shader.SetGlobalVector("_GrassOffsetCenter",Vector4.zero);
-        //Shader.SetGlobalVector("_GrassOffsetCenter", SphereObj.position);
-        //Shader.SetGlobalFloat("_GrassOffsetRadius", SphereObj.GetComponent<SphereCollider>().radius);
+
     }
 
     // Update is called once per frame
@@ -45,7 +42,7 @@ public class GrassRenderer : MonoBehaviour
         for (int i = 0; i < num; ++i)
         {
             Vector3 pos = new Vector3(Random.Range(-x * 0.5f, x * 0.5f), 0, Random.Range(-z * 0.5f, z * 0.5f));
-            list.Add(Matrix4x4.TRS(pos, Quaternion.identity, Vector3.one));
+            list.Add(Matrix4x4.TRS(pos, Quaternion.AngleAxis(Random.Range(0f,360f),Vector3.up), Vector3.one));
         }
 
         Matrix4x4s = new List<Matrix4x4[]>();
