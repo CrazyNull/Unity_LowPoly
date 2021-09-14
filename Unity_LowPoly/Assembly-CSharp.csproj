@@ -56,12 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Grass\GrassRenderer.cs" />
+    <Compile Include="Assets\Grass\GrassRenderer.cs" />
+    <Compile Include="Assets\Grass_InstancedIndirect\Grass_InstancedIndirect.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Shaders\LowPoly\Diffuse.shader" />
-    <None Include="Assets\Shaders\LowPoly\Water.shader" />
-    <None Include="Assets\Shaders\LowPoly\Grass.shader" />
+    <None Include="Assets\Grass_InstancedIndirect\Grass_Instanced.shader" />
+    <None Include="Assets\Diffuse\Diffuse.shader" />
+    <None Include="Assets\Water\Water.shader" />
+    <None Include="Assets\Grass\Grass.shader" />
+    <None Include="Assets\Grass_InstancedIndirect\Grass_Instanced_2.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
