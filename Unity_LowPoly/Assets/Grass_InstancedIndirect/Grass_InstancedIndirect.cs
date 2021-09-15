@@ -45,7 +45,7 @@ public class Grass_InstancedIndirect : MonoBehaviour
         Vector4[] positions = new Vector4[instanceCount];
         for (int i = 0; i < instanceCount; i++)
         {
-            positions[i] = new Vector4(Random.Range(-this.Size.x * 0.5f,this.Size.x * 0.5f),0, Random.Range(-this.Size.y * 0.5f, this.Size.y * 0.5f), 0);
+            positions[i] = new Vector4(Random.Range(-this.Size.x * 0.5f,this.Size.x * 0.5f),0, Random.Range(-this.Size.y * 0.5f, this.Size.y * 0.5f), Random.Range(0f,360f));
         }
         positionBuffer.SetData(positions);
         instanceMaterial.SetBuffer("positionBuffer", positionBuffer);

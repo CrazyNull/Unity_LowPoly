@@ -57,7 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _ColorLimit: 0.35
+    - _ColorLimit: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -75,9 +75,9 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.4745098, g: 0.88012683, b: 0.9254902, a: 1}
+    - _Color: {r: 0.53030324, g: 0.9254902, b: 0.4745098, a: 1}
     - _DownColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TopColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WindDir: {r: 0.5, g: 0, b: 0.5, a: 0}
+    - _WindDir: {r: 0.5, g: 0.2, b: 0.5, a: 0}
   m_BuildTextureStacks: []

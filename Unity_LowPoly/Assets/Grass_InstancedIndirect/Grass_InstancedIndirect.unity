@@ -331,9 +331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3b13e34011cb84293a7cfd63e3c475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: {x: 1000, y: 1000}
+  Size: {x: 50, y: 50}
   Density: 1
-  UnitMaxNum: 10
+  UnitMaxNum: 20
   instanceMesh: {fileID: 8254687373856176130, guid: 6293c12a4d63c544b92a2f1c55015a2f, type: 3}
   instanceMaterial: {fileID: 2100000, guid: a13ba79d0d253fa4683fc2566bc75a21, type: 2}
   subMeshIndex: 0

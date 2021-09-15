@@ -54,10 +54,16 @@ Shader "LowPoly/Grass_Instanced_2" {
             #else
                 float4 data = 0;
             #endif
-                
-                float3 worldPos = data.xyz + v.vertex.xyz;
 
-                float3 moveDir = _SwingOffset * normalize(_WindDir) * _SinTime.w;
+                float3 localPos = v.vertex.xyz;
+                float a = data.w;
+                float b = atan(localPos.x / localPos.z);
+                float r = sqrt(localPos.x * localPos.x  + localPos.z * localPos.z);
+                localPos.x = r * cos(a + b);
+                localPos.z = r * sin(a + b);
+                float3 worldPos = data.xyz + localPos;
+
+                float3 moveDir = _SwingOffset * _WindDir * _SinTime.w;
                 worldPos = worldPos + moveDir * smoothstep(0,1,v.vertex.y / 1.0);
 
                 v2f o;
