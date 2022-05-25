@@ -4,6 +4,7 @@ Shader "LowPoly/Grass_Instanced_2" {
         _ColorLimit ("Color Limit",float) = 1.0
         _SwingOffset ("Swing Offset",Float) = 0.1
         _WindDir ("Wind Direction",Vector) = (0,0,0,0)
+        _ColTexScale ("Color Texture Scale",Range(10,500)) = 100
     }
     SubShader {
 
@@ -28,6 +29,10 @@ Shader "LowPoly/Grass_Instanced_2" {
             float _SwingOffset;
             float3 _WindDir;
             float _ColorLimit;
+
+            float _ColTexScale;
+            sampler2D _GrassColorTex;
+            
 
         #if SHADER_TARGET >= 45
             StructuredBuffer<float4> positionBuffer;
@@ -71,15 +76,21 @@ Shader "LowPoly/Grass_Instanced_2" {
                 o.worldPos = worldPos;
                 o.uv = v.uv;
                 o.color = pow(_Color,v.vertex.y / _ColorLimit);
+
+                //o.color = fixed4(1,1,1,1);
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
+                float2 coluv = float2(((i.worldPos.x + _ColTexScale * 0.5f) % _ColTexScale) / _ColTexScale,((i.worldPos.z + _ColTexScale * 0.5f) % _ColTexScale) / _ColTexScale);
+                fixed4 col = tex2D(_GrassColorTex, coluv);
+                col += col * col * col;
                 fixed3 worldNormal = normalize(cross(ddy(i.worldPos),ddx(i.worldPos)));
                 fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
                 fixed4 diffuse = _LightColor0 * saturate(dot(worldNormal,worldLightDir)) * 0.5 + 0.5;
-                return diffuse * i.color;
+                //return diffuse * i.color * col;
+                return col;
             }
 
             ENDCG

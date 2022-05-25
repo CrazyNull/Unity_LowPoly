@@ -13,14 +13,20 @@ public class Grass_InstancedIndirect : MonoBehaviour
     public Material instanceMaterial;
     public int subMeshIndex = 0;
 
-    [Header("»æÖÆÊµÀýÊý")]
-    public int DrawInstanceCount = 0;
+    public Texture ColorTexture = null;
 
+    public int DrawInstanceCount = 0;
     private ComputeBuffer positionBuffer;
     private ComputeBuffer argsBuffer;
     private uint[] args = new uint[5] { 0, 0, 0, 0, 0 };
 
     private int _drawInstanceCount = 0;
+
+
+    void Awake()
+    {
+        Shader.SetGlobalTexture("_GrassColorTex",ColorTexture);
+    }
 
     void Start()
     {
@@ -45,7 +51,8 @@ public class Grass_InstancedIndirect : MonoBehaviour
         Vector4[] positions = new Vector4[instanceCount];
         for (int i = 0; i < instanceCount; i++)
         {
-            positions[i] = new Vector4(Random.Range(-this.Size.x * 0.5f,this.Size.x * 0.5f),0, Random.Range(-this.Size.y * 0.5f, this.Size.y * 0.5f), Random.Range(0f,360f));
+            float x = Random.Range(-this.Size.x * 0.5f,this.Size.x * 0.5f);
+            positions[i] = new Vector4(x ,0, Random.Range(-this.Size.y * 0.5f, this.Size.y * 0.5f), Random.Range(0f,360f));
         }
         positionBuffer.SetData(positions);
         instanceMaterial.SetBuffer("positionBuffer", positionBuffer);
