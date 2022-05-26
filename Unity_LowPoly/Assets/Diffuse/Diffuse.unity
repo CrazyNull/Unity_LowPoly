@@ -219,7 +219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00018762262
+      value: -0.0016848893
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalPosition.y
@@ -227,11 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4301524
+      value: -0.43085593
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92665356
+      value: 0.98503506
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalRotation.x
@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.37591654
+      value: -0.17235407
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalRotation.z
@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -44.162
+      value: -19.849
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c123b31e23acf574b825f1e2a398a309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -427,6 +427,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

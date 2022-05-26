@@ -13,8 +13,6 @@ public class Grass_InstancedIndirect : MonoBehaviour
     public Material instanceMaterial;
     public int subMeshIndex = 0;
 
-    public Texture ColorTexture = null;
-
     public int DrawInstanceCount = 0;
     private ComputeBuffer positionBuffer;
     private ComputeBuffer argsBuffer;
@@ -25,7 +23,7 @@ public class Grass_InstancedIndirect : MonoBehaviour
 
     void Awake()
     {
-        Shader.SetGlobalTexture("_GrassColorTex",ColorTexture);
+
     }
 
     void Start()

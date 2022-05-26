@@ -40,12 +40,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _GrassColorTex:
+        m_Texture: {fileID: 2800000, guid: 839fb76404e7e064d89e1f41d4b501ee, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 02db490a526e3e64aad979d251f484e6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -59,7 +67,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _ColTexScale: 62
+    - _ColTexScale: 25
     - _ColorLimit: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -74,7 +82,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SwingOffset: 0.5
+    - _SwingOffset: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -82,5 +90,5 @@ Material:
     - _DownColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TopColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WindDir: {r: 0.5, g: 0.2, b: 0.5, a: 0}
+    - _WindDir: {r: 2, g: 2, b: 2, a: 0}
   m_BuildTextureStacks: []
