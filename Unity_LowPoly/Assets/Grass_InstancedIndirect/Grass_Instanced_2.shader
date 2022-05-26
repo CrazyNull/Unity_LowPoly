@@ -25,6 +25,8 @@ Shader "LowPoly/Grass_Instanced_2" {
             #pragma fragment frag
             #pragma multi_compile_fwdbase nolightmap nodirlightmap nodynlightmap novertexlight
             #pragma target 4.5
+            #pragma multi_compile_fog
+
 
             #include "UnityCG.cginc"
             #include "UnityLightingCommon.cginc"
@@ -57,7 +59,7 @@ Shader "LowPoly/Grass_Instanced_2" {
                 float2 uv : TEXCOORD0;
                 float3 worldPos : TEXCOORD1;
                 float2 coluv : TEXCOORD2;
-                float noise : TEXCOORD3;
+                UNITY_FOG_COORDS(3)
             };
 
             v2f vert (appdata v, uint instanceID : SV_InstanceID)
@@ -93,7 +95,8 @@ Shader "LowPoly/Grass_Instanced_2" {
 
                 o.worldPos = worldPos;
                 o.uv = v.uv;
-                o.noise = n;
+                UNITY_TRANSFER_FOG(o,o.vertex);
+
                 return o;
             }
 
@@ -101,14 +104,17 @@ Shader "LowPoly/Grass_Instanced_2" {
             {
                 fixed4 col = tex2D(_GrassColorTex, i.coluv);
                 col += col * col * col * col;
-                //col *= i.noise;
                 fixed3 worldNormal = normalize(cross(ddy(i.worldPos),ddx(i.worldPos)));
                 fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
-                fixed4 diffuse = _LightColor0 * saturate(dot(worldNormal,worldLightDir)) * 0.5 + 0.75;
-                return diffuse * col * _Color;
+                fixed4 diffuse = _LightColor0 * saturate(dot(worldNormal,worldLightDir)) * 0.5 + 0.5;
+                col = diffuse * col * _Color;
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
             }
 
             ENDCG
         }
     }
+
+    
 }
