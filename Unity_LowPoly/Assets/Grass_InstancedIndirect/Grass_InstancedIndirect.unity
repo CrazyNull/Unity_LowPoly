@@ -199,8 +199,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425477892}
-  m_LocalRotation: {x: 0.15117061, y: 0.79162705, z: -0.2172951, w: 0.5506876}
-  m_LocalPosition: {x: -15.19144, y: 5.983358, z: 4.875}
+  m_LocalRotation: {x: 0.072600126, y: 0.906481, z: -0.17423826, w: 0.37770686}
+  m_LocalPosition: {x: -11.442379, y: 2.3447168, z: 11.051495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,7 +340,6 @@ MonoBehaviour:
   instanceMesh: {fileID: 8254687373856176130, guid: 874c5fbd1f276a64fa9257a9520d7f3e, type: 3}
   instanceMaterial: {fileID: 2100000, guid: a13ba79d0d253fa4683fc2566bc75a21, type: 2}
   subMeshIndex: 0
-  ColorTexture: {fileID: 2800000, guid: 839fb76404e7e064d89e1f41d4b501ee, type: 3}
   DrawInstanceCount: 0
 --- !u!4 &847813994
 Transform:
