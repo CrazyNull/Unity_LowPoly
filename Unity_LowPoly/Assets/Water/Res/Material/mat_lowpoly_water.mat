@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: mat_lowpoly_water
   m_Shader: {fileID: 4800000, guid: f37bfe5ab3c231741b1bfb3c60d3a8aa, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -55,12 +56,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Gloss: 6.9
+    - _Gloss: 6.1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -77,7 +79,7 @@ Material:
     - _WaveDir2: 150
     - _WaveDir3: 230
     - _WaveHight: 0.025
-    - _WaveHight1: 0.01
+    - _WaveHight1: 0.02
     - _WaveHight2: 0.015
     - _WaveHight3: 0.01
     - _WaveScale: 100
@@ -90,7 +92,7 @@ Material:
     - _WaveSpeed3: 30
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.91119623, b: 0.8352941, a: 0.8156863}
+    - _Color: {r: 0, g: 0.91119623, b: 0.8352941, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
     - _WaveDir: {r: 1, g: 0, b: 0, a: 0}
